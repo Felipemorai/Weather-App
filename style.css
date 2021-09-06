@@ -51,9 +51,28 @@ header i {
     outline: none;
     border-radius: 7px;
     box-shadow: 1px 1px 3px #adb5bd;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .input-part input {
     border: 1px solid #bfbfbf;
     text-align: center;
+}
+
+.input-part button {
+    color: #333;
+    background: #efefef;
+    cursor: pointer;
+}
+
+.input-part button:hover {
+    background: #f5f3f4;
+}
+
+.input-part .separator {
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 25px 0;
 }
