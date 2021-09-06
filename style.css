@@ -61,13 +61,13 @@ header i {
 }
 
 .input-part button {
-    color: #333;
-    background: #efefef;
+    color: #fff;
+    background: #43affc;
     cursor: pointer;
 }
 
 .input-part button:hover {
-    background: #f5f3f4;
+    background: #4cc9fc;
 }
 
 .input-part .separator {
@@ -75,4 +75,16 @@ header i {
     width: 100%;
     background: #ccc;
     margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator::before {
+    content: "or";
+    background: #fff;
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ccc;
 }
