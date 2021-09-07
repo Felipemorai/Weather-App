@@ -124,6 +124,7 @@ header i {
     justify-content: center;
     flex-direction: column;
     margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .weather-part img {
@@ -131,3 +132,19 @@ header i {
     margin-bottom: 10px;
 }
 
+.weather-part .temp {
+    display: flex;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.weather-part .temp .numb {
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.weather-part .temp .deg {
+    font-size: 40px;
+    margin: 5px 5px 0 0;
+    display: block;
+}
