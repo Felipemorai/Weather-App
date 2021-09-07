@@ -116,3 +116,18 @@ header i {
     font-weight: 500;
     color: #ccc;
 }
+
+.wrapper .weather-part {
+    margin: 30px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.weather-part img {
+    max-width: 130px;
+    margin-bottom: 10px;
+}
+
