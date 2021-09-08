@@ -35,13 +35,24 @@ body {
 
 header i {
     cursor: pointer;
-    font-size: 33px;
+    font-size: 0px;
     margin-right: 8px;
 }
 
+.wrapper.active header i {
+    font-size: 33px;
+    margin-left: 5px;
+}
+
 .wrapper .input-part {
-    /*  display: none;  */
     margin: 20px 25px 30px;
+}
+
+.wrapper.active .input-part {
+    display: none;
+}
+.wrapper.active .weather-part {
+    display: flex;
 }
 
 .input-part .info-txt {
@@ -119,7 +130,7 @@ header i {
 
 .wrapper .weather-part {
     margin: 30px 0 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -197,7 +208,6 @@ header i {
     font-size: 20px;
     margin: 5px;
     font-weight: 500;
-    margin-top: -3px;
 }
 
 .details .temp .deg {
@@ -208,5 +218,5 @@ header i {
 
 .details p {
     font-size: 16px;
-    margin-top: -6px;
+    margin-top: -4px;
 }
