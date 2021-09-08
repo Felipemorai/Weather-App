@@ -148,3 +148,21 @@ header i {
     margin: 5px 5px 0 0;
     display: block;
 }
+
+.weather-part .weather {
+    font-size: 21px;
+    text-align: center;
+    margin: -5px 20px 15px;
+}
+
+.weather-part .location {
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.location i {
+    font-size: 22px;
+    margin-right: 5px;
+}
