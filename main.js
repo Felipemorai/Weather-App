@@ -11,7 +11,9 @@ inputField.addEventListener("keyup", e => {
 });
 
 function requestApi(city){
-    let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+    let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    infoTxt.innerText = "Getting Weather details...";
+    infoTxt.classList.add("pending");
     /* Getting api response and returning it with parsing into js object and in another */
     /* Then function calling weatherDetails function with passing api result as an argument */
     fetch(api).then(response => response.json()).then(result => weatherDetails(result));
