@@ -165,4 +165,31 @@ header i {
 .location i {
     font-size: 22px;
     margin-right: 5px;
+    color: #ba181b
+}
+
+.weather-part .bottom-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #bfbfbf;
+    margin-top: 5px;
+}
+
+.bottom-details .column {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.column i {
+    font-size: 35px;
+    color: #43affc;
+}
+
+.column.humidity {
+    border-left: 1px solid #bfbfbf;
 }
