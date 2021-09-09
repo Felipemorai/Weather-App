@@ -17,7 +17,18 @@ locationBtn.addEventListener("click", () => {
     } else {
         alert("Your browser not support  geolocation api");
     }
-})
+});
+
+function onSuccess(position){
+    /* Getting lat and lon of the user device from coords object */
+    const {latitude, longitude} = position.coords;
+    let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+}
+
+function onError(error){
+    infoTxt.innerText = error.message;
+    infoTxt.classList.add("error");
+}
 
 function requestApi(city){
     let apiKey = 'ca126af951544574737763ad3a9d5d16';
