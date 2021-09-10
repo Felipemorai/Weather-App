@@ -48,5 +48,13 @@ function fetchData() {
 }
 
 function weatherDetails(info){
-    console.log(info);
+    infoTxt.classList.replace("pending", "error");
+    if(info.cod == "404") {
+        infoTxt.innerText = `${inputField.value} isn't a valid city name`;
+    }else {
+        /* Let's get required properties value from the info object */
+        infoTxt.classList.remove("pending", "error");
+        wrapper.classList.add("active");
+        console.log(info);
+    }
 }
