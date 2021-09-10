@@ -4,6 +4,8 @@ infoTxt = inputPart.querySelector(".info-txt"),
 inputField = inputPart.querySelector("input"),
 locationBtn = inputPart.querySelector("button");
 
+let api;
+
 inputField.addEventListener("keyup", e => {
     /* If user pressed enter button and input value isn't empty */
     if(e.key == "Enter" && inputField.value != "") {
@@ -22,7 +24,8 @@ locationBtn.addEventListener("click", () => {
 function onSuccess(position){
     /* Getting lat and lon of the user device from coords object */
     const {latitude, longitude} = position.coords;
-    let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    fetchData();
 }
 
 function onError(error){
@@ -32,7 +35,11 @@ function onError(error){
 
 function requestApi(city){
     let apiKey = 'ca126af951544574737763ad3a9d5d16';
-    let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    fetchData();
+}
+
+function fetchData() {
     infoTxt.innerText = "Getting Weather details...";
     infoTxt.classList.add("pending");
     /* Getting api response and returning it with parsing into js object and in another */
