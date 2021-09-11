@@ -53,6 +53,18 @@ function weatherDetails(info){
         infoTxt.innerText = `${inputField.value} isn't a valid city name`;
     }else {
         /* Let's get required properties value from the info object */
+        const city = info.name;
+        const country = info.sys.country;
+        const {description, id} = info.weather[0];
+        const {feels_like, humidity, temp} = info.main;
+
+        /* Let's pass these values to a particular html element */
+        wrapper.querySelector(".temp .numb").innerText = temp;
+        wrapper.querySelector(".weather").innerText = description;
+        wrapper.querySelector(".location span").innerText = `${city}`, `${country}`;
+        wrapper.querySelector(".temp .numb-2").innerText = feels_like;
+        wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
+
         infoTxt.classList.remove("pending", "error");
         wrapper.classList.add("active");
         console.log(info);
