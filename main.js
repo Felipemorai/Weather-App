@@ -24,7 +24,7 @@ locationBtn.addEventListener("click", () => {
 function onSuccess(position){
     /* Getting lat and lon of the user device from coords object */
     const {latitude, longitude} = position.coords;
-    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
     fetchData();
 }
 
@@ -35,7 +35,7 @@ function onError(error){
 
 function requestApi(city){
     let apiKey = 'ca126af951544574737763ad3a9d5d16';
-    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     fetchData();
 }
 
@@ -59,10 +59,10 @@ function weatherDetails(info){
         const {feels_like, humidity, temp} = info.main;
 
         /* Let's pass these values to a particular html element */
-        wrapper.querySelector(".temp .numb").innerText = temp;
+        wrapper.querySelector(".temp .numb").innerText = Math.floor(temp);
         wrapper.querySelector(".weather").innerText = description;
         wrapper.querySelector(".location span").innerText = `${city}`, `${country}`;
-        wrapper.querySelector(".temp .numb-2").innerText = feels_like;
+        wrapper.querySelector(".temp .numb-2").innerText = Math.floor(feels_like);
         wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
 
         infoTxt.classList.remove("pending", "error");
